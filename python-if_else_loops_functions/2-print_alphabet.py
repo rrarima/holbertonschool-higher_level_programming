@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-print(''.join([f'{chr(ch)}' for ch in range(97, 123)]))
+print(''.join('{}'.format(chr(ch)) for ch in range(97, 123)))
