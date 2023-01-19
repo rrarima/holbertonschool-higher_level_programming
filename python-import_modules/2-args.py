@@ -5,7 +5,7 @@ import sys
 def print_argv(argv):
     argument = len(argv) - 1
     if argument == 0:
-        print("{:d} argument:".format(argument))
+        print("{:d} arguments.".format(argument))
         return
     else:
         if argument == 1:
