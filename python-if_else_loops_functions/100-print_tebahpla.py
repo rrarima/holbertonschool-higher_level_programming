@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-for ch in range(26):
-    if ch % 2 == 0:
-        print(chr(122 - ch), end="")
-    else:
-        print(chr(90 - ch), end="")
+print("{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}".format(
+    *(chr(122 - ch) if ch % 2 == 0 else chr(90 - ch) for ch in range(26))
+))
