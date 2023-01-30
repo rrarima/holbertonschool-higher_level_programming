@@ -6,8 +6,6 @@ class Square:
     """square class with size and validation
         using # character
     """
-
-
     def __init__(self, size=0):
         self.__size = size
 
@@ -29,5 +27,5 @@ class Square:
     def my_print(self):
         if not self.__size:
             print("")
-        for i in range (self.__size):
-            print ("#" * self.__size)
+        for i in range(self.__size):
+            print("#" * self.__size)
