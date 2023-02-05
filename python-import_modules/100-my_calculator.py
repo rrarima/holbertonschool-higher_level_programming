@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 
-import calculator_1
-import sys
-
 if __name__ == "__main__":
+    from calculator_1 import add, sub, mul, div
+    import sys
+
     unkown_op = "Unknown operator. Available operators: +, -, * and /"
 
     if len(sys.argv) != 4:
@@ -15,13 +15,13 @@ if __name__ == "__main__":
     b = int(b)
 
     if operator == "+":
-        result = calculator_1.add(a, b)
+        result = add(a, b)
     elif operator == "-":
-        result = calculator_1.sub(a, b)
+        result = sub(a, b)
     elif operator == "*":
-        result = calculator_1.mul(a, b)
+        result = mul(a, b)
     elif operator == "/":
-        result = calculator_1.div(a, b)
+        result = div(a, b)
     else:
         print(unkown_op)
         sys.exit(1)
