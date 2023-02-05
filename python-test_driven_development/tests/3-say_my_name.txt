@@ -7,7 +7,7 @@ Using ``say_my_name``
 
 Import ``say_my_name``:
 
-     >>> matrix_divided = __import__('3-say_my_name').say_my_name
+     >>> say_my_name = __import__('3-say_my_name').say_my_name
 
 Now use it:
 
