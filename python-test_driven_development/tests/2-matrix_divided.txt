@@ -45,8 +45,8 @@ Now use it:
     >>> matrix_divided()
     Traceback (most recent call last):
     	      ...
-    TypeError: div must be a number
-
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+    
     Matrix divided missing one arg:
     >>> matrix_divided([[1, 2], [3, 4]])
     Traceback (most recent call last):
