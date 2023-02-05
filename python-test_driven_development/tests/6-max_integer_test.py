@@ -9,8 +9,26 @@ class TestMaxInteger(unittest.TestCase):
 
 
     def test_max_int(self):
-        """Normal test"""
         self.assertEqual(max_integer([1, 2, 3, 4]), 4)
+
+    def test_max_int_beginning(self):
+        self.assertEqual(max_integer([4, 3, 2, 1]), 4)
+
+    def test_max_int_middle(self):
+        self.assertEqual(max_integer([1, 2, 5, 4, 3]), 5)
+
+    def test_max_int_one_neg_number(self):
+        self.assertEqual(max_integer([-1, 2, 3, 4]), 4)
+
+    def test_max_int_only_neg(self):
+        self.assertEqual(max_integer([-1, -2, -3, -4]), -1)
+
+    def test_max_int_one_element_exist(self):
+        self.assertEqual(max_integer([1]), 1)
+
+    def test_max_int_empty_list(self):
+        self.assertEqual(max_integer([]), None)
+
 
 if __name__ == '__main__':
     unittest.main()
