@@ -23,6 +23,6 @@ def matrix_divided(matrix, div):
                 raise TypeError(msg_1)
             else:
                 inner_list.append(round(items / div, 2))
-            new_matrix.append(inner_list)
+        new_matrix.append(inner_list)
 
     return new_matrix
