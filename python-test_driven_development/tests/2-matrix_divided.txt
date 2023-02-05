@@ -53,8 +53,13 @@ Now use it:
     	      ...
     TypeError: matrix_divided() missing 1 required positional argument: 'div'
 
-    Matrix dicided equal 0:
+    Matrix divided equal 0:
     >>> matrix_divided([[1, 2], [3, 4]], 0)
     Traceback (most recent call last):
     	      ...
     ZeroDivisionError: division by zero
+
+    Matrix divided float(inf):
+    >>> matrix = [[1, 2], [3, 4]]
+    >>> print(matrix_divided(matrix, 0))
+    [[0.0, 0.0], [0.0, 0.0]]
