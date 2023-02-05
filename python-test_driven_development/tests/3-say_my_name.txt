@@ -22,7 +22,7 @@ Now use it:
     TypeError: last_name must be a string
 
     Say my name first name:
-        >>> say_my_name(4)
+    >>> say_my_name(4)
     Traceback (most recent call last):
     	      ...
     TypeError: first_name must be a string
