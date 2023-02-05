@@ -1,0 +1,16 @@
+The ``say_my_name` module
+======================
+
+Using ``say_my_name``
+-------------------
+
+
+Import ``say_my_name``:
+
+     >>> matrix_divided = __import__('3-say_my_name').say_my_name
+
+Now use it:
+
+    Basic say my name:
+    >>> say_my_name("Eps", "Mah Bah" )
+    My name is Eps Mah Bah
