@@ -1,13 +1,13 @@
-The ``my_list`` module
+The ``MyList`` module
 ======================
 
-Using ``my_list``
+Using ``MyList``
 -------------------
 
 
 Import ``my_list``:
 
-     >>> my_list = __import__('1-my_list').my_list
+     >>> MyList = __import__('1-my_list').MyList
 
 Now use it:
 
