@@ -7,7 +7,7 @@ Using ``my_list``
 
 Import ``my_list``:
 
-     >>> MyList = __import__('1-my_list').my_list
+     >>> my_list = __import__('1-my_list').my_list
 
 Now use it:
 
