@@ -60,22 +60,22 @@ Now use it:
     >>> bg.integer_validator("age", [3])
     Traceback (most recent call last):
     ...
-    TypeError: age must be greater than 0
+    TypeError: age must be an integer
 
     BG int validator(age, True)
     >>> bg.integer_validator("age", True)
     Traceback (most recent call last):
     ...
-    TypeError: age must be greater than 0
+    TypeError: age must be an integer
 
     BG int validator(age, {3, 4})
     >>> bg.integer_validator("age", {3, 4})
     Traceback (most recent call last):
     ...
-    TypeError: age must be greater than 0
+    TypeError: age must be an integer
 
     BG int validator(age, None)
     >>> bg.integer_validator("age", None)
     Traceback (most recent call last):
     ...
-    TypeError: age must be greater than 0
+    TypeError: age must be an integer
