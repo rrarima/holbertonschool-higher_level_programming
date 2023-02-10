@@ -13,5 +13,5 @@ Now use it:
 
     BG docstring:
     >>> a = __import__('7-base_geometry').BaseGeometry.__doc__
-    >>> len(m) > 1
+    >>> len(a) > 1
     True
