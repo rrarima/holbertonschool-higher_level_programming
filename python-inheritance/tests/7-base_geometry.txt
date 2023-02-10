@@ -1,0 +1,17 @@
+The ``BaseGeometry`` module
+======================
+
+Using ``BaseGeometry``
+-------------------
+
+
+Import ``base_geometry``:
+
+     >>> BaseGeometry = __import__('7-base_geometry.py').BaseGeometry
+
+Now use it:
+
+    BG docstring:
+    >>> a = __import__('7-base_geometry.py').BaseGeometry.__doc__
+    >>> len(m) > 1
+    True
