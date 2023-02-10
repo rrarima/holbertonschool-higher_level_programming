@@ -15,4 +15,4 @@ if os.path.isfile(add_item):
 else:
     obj = []
 obj.extend(sys.argv[1:])
-save_to_json_file(obj, filename)
+save_to_json_file(obj, add_item)
