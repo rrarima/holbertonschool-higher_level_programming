@@ -15,3 +15,11 @@ Now use it:
     >>> a = __import__('7-base_geometry').BaseGeometry.__doc__
     >>> len(a) > 1
     True
+
+    BG area():
+    >>> bg = BaseGeometry()
+    >>> bg.area()
+    Traceback (most recent call last):
+    ...
+    Exception: area() is not implemented
+
