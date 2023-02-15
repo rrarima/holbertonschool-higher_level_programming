@@ -81,6 +81,6 @@ class Rectangle(Base):
 
     def __str__(self):
         """Return string format"""
-        return "[" + self.__class__.__name__ + "] " "(" + str(self.id) + ") " \
-            + str(self.__x) + "/" + str(self.__y) + " - " \
-            + str(self.__width) + "/" + str(self.__height)
+        return "[{}] ({}) {}/{} - {}/{}".format(
+                self.__class__.__name__, self.id, self.__x, self.__y,
+                self.__width, self.__height)
