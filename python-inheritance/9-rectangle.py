@@ -19,5 +19,5 @@ class Rectangle(BaseGeometry):
         return self.__width * self.__height
 
     def __str__(self):
-        """Return string area of rectangle"""
-        return f"[Rectangle] {self.__width}/{self.__height}"
+        """Return string representation of square"""
+        return f"[{self.__class__.__name__}] {self.__size}/{self.__size}"
