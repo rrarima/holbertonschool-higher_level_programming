@@ -76,6 +76,9 @@ class Rectangle(Base):
 
     def display(self):
         """Display rectangle"""
+        if self.__y != 0:
+            for newline in range(self.__y):
+                print()
         for row in range(self.__height):
             print((self.__x * "") + (self.__width * '#'))
 
