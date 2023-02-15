@@ -78,3 +78,9 @@ class Rectangle(Base):
         """Display rectangle"""
         for row in range(self.__height):
             print((self.__x * "") + (self.__width * '#'))
+
+    def __str__(self):
+        """Return string format"""
+        return "[" + self.__class__.__name__ + "] " "(" + str(self.id) + ") " \
+                + str(self.__x) + "/" + str(self.__y) + " - " \
+                + str(self.__width) + "/" + str(self.__height)
