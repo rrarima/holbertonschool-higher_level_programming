@@ -2,6 +2,7 @@
 """Base Class"""
 import json
 
+
 class Base:
     """Base class init"""
 
