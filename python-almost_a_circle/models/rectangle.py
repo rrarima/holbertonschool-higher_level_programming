@@ -86,11 +86,11 @@ class Rectangle(Base):
                 self.__class__.__name__, self.id, self.__x, self.__y,
                 self.__width, self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Update rectangle values"""
         if len(args) == 0:
             for k, v in kwargs.items():
-                sself.__setattr__(k, v)
+                self.__setattr__(k, v)
             return
 
         try:
