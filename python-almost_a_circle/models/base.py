@@ -19,7 +19,18 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """return JSON string format"""
+        """Return JSON string format"""
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
         return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """Return JSON list of objects"""
+        filename = cls.__name__ + ".json"
+        with open(filename, "w") as jsonfile:
+            if list_objs is None:
+                jsonfile.write("[]")
+            else:
+                dict_list = [o.to_dictionary() for o in list_objs]
+                jsonfile.write(Base.to_json_string(dict_list))
