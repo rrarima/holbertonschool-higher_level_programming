@@ -101,3 +101,7 @@ class Rectangle(Base):
             self.y = args[4]
         except IndexError:
             pass
+
+    def to_dictionary(self):
+        """Return dict format"""
+        return self.__dict__
