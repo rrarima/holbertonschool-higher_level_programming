@@ -47,8 +47,18 @@ class Base:
         """Return instance with all attributes set"""
         if dictionary != {}:
             if cls.__name__ == "Rectangle":
-                new = cls(3169, 3169)
+                new = cls(1, 1)
             else:
-                new = cls(3169)
+                new = cls(1)
             new.update(**dictionary)
             return new
+
+    @classmethod
+    def load_from_file(cls):
+        """Load file with .json file type"""
+        try:
+            with open(f"{cls.__name__}.json", "r") as json_format:
+                dict_list = cls.from_json_string(json_format.read())
+                return [cls.create(**dictionary) for dictionary in dict_list]
+        except FileNotFoundError:
+            return []
