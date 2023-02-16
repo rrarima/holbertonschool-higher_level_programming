@@ -47,8 +47,8 @@ class Base:
         """Return instance with all attributes set"""
         if dictionary != {}:
             if cls.__name__ == "Rectangle":
-                new = cls(2, 2)
+                new = cls(3169, 3169)
             else:
-                new = cls(2)
+                new = cls(3169)
             new.update(**dictionary)
             return new
