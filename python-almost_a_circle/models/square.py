@@ -26,6 +26,7 @@ class Square(Rectangle):
                 self.width)
 
     def update(self, *args, **kwargs):
+        """Return variable number of keywords and non-keywords"""
         if len(kwargs) != 0:
             for k, v in kwargs.items():
                 setattr(self, k, v)
