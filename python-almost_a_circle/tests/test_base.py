@@ -3,7 +3,7 @@
 
 
 class Base:
-    """Base class init"""
+    """Base class ini"""
 
     __nb_objects = 0
 
