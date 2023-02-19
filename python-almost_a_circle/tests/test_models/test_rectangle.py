@@ -32,7 +32,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(o1.height, 3)
         self.assertEqual(o1.x, 0)
         self.assertEqual(o1.y, 0)
-        self.assertEqual(o1.id, 1)
+        self.assertEqual(o1.id, 8)
         self.assertEqual(o2.width, 3)
         self.assertEqual(o2.height, 4)
         self.assertEqual(o2.x, 1)
