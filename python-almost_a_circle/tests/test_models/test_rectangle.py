@@ -93,5 +93,22 @@ class TestRectangle(unittest.TestCase):
         r5.update(id=8, x=1, width=3)
         self.assertEqual(r5.__str__(), '[Rectangle] (8) 1/0 - 3/2')
 
+    def test_rectangle_to_dict(self):
+        """Testing to_dictionary()"""
+        r1 = Rectangle(5, 7)
+        r2 = Rectangle(8, 10, 3, 4, 5)
+        r3 = Rectangle(3, 2, 1, 1)
+        r4 = Rectangle(3, 2, 0, 0, 10)
+
+        expected_dict_r1 = {'id': r1.id, 'width': 5, 'height': 7, 'x': 0, 'y': 0}
+        expected_dict_r2 = {'id': 5, 'width': 8, 'height': 10, 'x': 3, 'y': 4}
+        expected_dict_r3 = {'id': r3.id, 'width': 3, 'height': 2, 'x': 1, 'y': 1}
+        expected_dict_r4 = {'id': 10, 'width': 3, 'height': 2, 'x': 0, 'y': 0}
+
+        self.assertDictEqual(r1.to_dictionary(), expected_dict_r1)
+        self.assertDictEqual(r2.to_dictionary(), expected_dict_r2)
+        self.assertDictEqual(r3.to_dictionary(), expected_dict_r3)
+        self.assertDictEqual(r4.to_dictionary(), expected_dict_r4)
+
 if __name__ == "__main__":
     unittest.main()
