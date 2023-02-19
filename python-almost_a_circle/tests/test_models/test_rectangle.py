@@ -13,5 +13,12 @@ class TestRectangle(unittest.TestCase):
         Base._Base__nb_objects = 0
         self.assertEqual(Base._Base__nb_objects, 0)
 
+    def test_area(self):
+        t1 = Rectangle(1, 2)
+        t2 = Rectangle(1, 2, 3, 4, 5)
+
+        self.assertEqual(t1.area(), 2)
+        self.assertEqual(t1.area(), 2)
+
 if __name__ == '__main__':
     unittest.main()
