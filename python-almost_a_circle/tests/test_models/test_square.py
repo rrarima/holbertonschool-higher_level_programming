@@ -96,7 +96,65 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s1.id, 1)
         self.assertEqual(s1._Base__nb_objects, 3)
         self.assertEqual(s2.id, 'hello')
-        self.assertEqual(s2._Base__nb_objects, 3)
+        self.assertEqual(s2._Base__nb_objects, 3)    
+
+        def test_create_methods(self):
+            """Test create method with different arguments"""
+        
+            self.assertTrue(hasattr(Square, 'create'))
+        
+            s1 = Square.create(**{ 'id': 89 })
+            self.assertEqual(s1.id, 89)
+        
+            s2 = Square.create(**{ 'id': 89, 'size': 1 })
+            self.assertEqual(s2.id, 89)
+            self.assertEqual(s2.size, 1)
+        
+            s3 = Square.create(**{ 'id': 89, 'size': 1, 'x': 2 })
+            self.assertEqual(s3.id, 89)
+            self.assertEqual(s3.size, 1)
+            self.assertEqual(s3.x, 2)
+        
+            s4 = Square.create(**{ 'id': 89, 'size': 1, 'x': 2, 'y': 3 })
+            self.assertEqual(s4.id, 89)
+            self.assertEqual(s4.size, 1)
+            self.assertEqual(s4.x, 2)
+            self.assertEqual(s4.y, 3)    
+
+        def test_save_and_load_methods(self):
+            """Test save_to_file and load_from_file methods"""
+        
+            self.assertTrue(hasattr(Square, 'save_to_file'))
+            Square.save_to_file(None)
+            with open("Square.json", "r") as file:
+                self.assertEqual(file.read(), "[]")
+        
+            self.assertTrue(hasattr(Square, 'save_to_file'))
+            Square.save_to_file([])
+            with open("Square.json", "r") as file:
+                self.assertEqual(file.read(), "[]")
+        
+            self.assertTrue(hasattr(Square, 'save_to_file'))
+            s1 = Square(1)
+            Square.save_to_file([s1])
+            with open("Square.json", "r") as file:
+                self.assertEqual(json.dumps([s1.to_dictionary()]), file.read())
+        
+            self.assertTrue(hasattr(Square, 'load_from_file'))
+            if os.path.exists("Square.json"):
+                os.remove("Square.json")
+            self.assertEqual(Square.load_from_file(), [])
+        
+            self.assertTrue(hasattr(Square, 'load_from_file'))
+            s2 = Square(2)
+            Square.save_to_file([s2])
+            squares = Square.load_from_file()
+            self.assertEqual(len(squares), 1)
+            self.assertIsInstance(squares[0], Square)
+            self.assertEqual(squares[0].id, s2.id)
+            self.assertEqual(squares[0].size, s2.size)
+            self.assertEqual(squares[0].x, s2.x)
+            self.assertEqual(squares[0].y, s2.y)
 
 if __name__ == '__main__':
     unittest.main()
