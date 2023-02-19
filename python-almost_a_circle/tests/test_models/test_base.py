@@ -75,3 +75,5 @@ class TestBase(unittest.TestCase):
         self.assertIsInstance(lst[0], dict)
         self.assertIn('id', lst[0])
 
+if __name__ == '__main__':
+    unittest.main()
