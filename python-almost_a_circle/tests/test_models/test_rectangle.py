@@ -1,15 +1,17 @@
 #!/usr/bin/python3
-"""Rectangle class using Base"""
+"""Rectangle Unit test"""
+import unittest
+from models.rectangle import Rectangle
 from models.base import Base
 
 
-class Rectangle(Base):
-    """Rectangle class"""
+class TestRectangle(unittest.TestCase):
+    """Rectangle unit test"""
 
-    def __init__(self, width, height, x=0, y=0, id=None):
-        """Initialise class"""
-        super().__init__(id)
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+    def objCount(self):
+        """Grabs obj count"""
+        Base._Base__nb_objects = 0
+        self.assertEqual(Base._Base__nb_objects, 0)
+
+if __name__ == '__main__':
+    unittest.main()
