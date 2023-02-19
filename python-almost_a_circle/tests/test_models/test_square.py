@@ -13,7 +13,7 @@ class Test_Square(TestCase):
         Base._Base__nb_objects = 0
 
     def test_empty(self):
-        with self.asserRaises(TypeError):
+        with self.assertRaises(TypeError):
             Square()
 
 if __name__ == "__main__":
