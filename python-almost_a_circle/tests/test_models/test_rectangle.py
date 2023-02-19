@@ -47,5 +47,18 @@ class TestRectangle(unittest.TestCase):
         self.assertRaises(ValueError, Rectangle, -8, 9)
         self.assertRaises(TypeError, Rectangle)
 
+    def test_str(self):
+        """Test __str__() for Rectangle"""
+
+        r1 = Rectangle(4, 5, 1, 2, 1)
+        r2 = Rectangle(10, 15, 3, 4, 2)
+        r3 = Rectangle(7, 8, 0, 0, 3)
+        r4 = Rectangle(2, 6, 2, 2, "eps")
+
+        assert str(r1) == "[Rectangle] (1) 1/2 - 4/5"
+        assert str(r2) == "[Rectangle] (2) 3/4 - 10/15"
+        assert str(r3) == "[Rectangle] (3) 0/0 - 7/8"
+        assert str(r4) == "[Rectangle] (eps) 2/2 - 2/6"
+
 if __name__ == "__main__":
     unittest.main()
