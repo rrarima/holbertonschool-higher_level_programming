@@ -1,10 +1,16 @@
 #!/usr/bin/python3
 """Unit test for base class"""
-import unittest
-from models.base import Base
+from unittest import TestCase
 
-class TestBase(unittest.TestCase):
+from models.base import Base
+from models.rectangle import Rectangle
+from models.square import Square
+
+class TestBase(TestCase):
     """Base class unit test"""
+
+    def setup(self):
+        Base._Base__nb_objects = 0
 
     def test_id(self):
         """Test base id if it exist"""
