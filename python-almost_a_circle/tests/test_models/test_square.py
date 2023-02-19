@@ -66,7 +66,37 @@ class TestSquare(unittest.TestCase):
         s1 = Square(5, 2, 3, 7)
         s1_dict = s1.to_dictionary()
         expected_dict = {'id': 7, 'size': 5, 'x': 2, 'y': 3}
-        self.assertEqual(s1_dict, expected_dict)
+        self.assertEqual(s1_dict, expected_dict)    
+
+    def test_square_creation_zero(self):
+        """0 test case"""
+        with self.assertRaises(ValueError):
+            s = Square(0)
+
+    def test_square_instantiation(self):
+        """Test instantiation of Square objects"""
+
+        s1 = Square(7)
+        s2 = Square(3, 2, 1, "hello")
+
+        with self.assertRaises(ValueError):
+            s3 = Square(-5, 3, 4)
+            s4 = Square(9.5)
+            s5 = Square(float('inf'))
+            s6 = Square("string")
+            s9 = Square(None)
+
+        with self.assertRaises(TypeError):
+            s7 = Square(5, "hi")
+            s8 = Square(5, None)
+            s10 = Square(5, float('inf'))
+            s11 = Square(5, 9.5)
+            s12 = Square()
+
+        self.assertEqual(s1.id, 1)
+        self.assertEqual(s1._Base__nb_objects, 3)
+        self.assertEqual(s2.id, 'hello')
+        self.assertEqual(s2._Base__nb_objects, 3)
 
 if __name__ == '__main__':
     unittest.main()
