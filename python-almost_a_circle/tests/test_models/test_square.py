@@ -3,6 +3,8 @@
 Unit tests for the Square class
 """
 import unittest
+import json
+import os
 from io import StringIO
 from unittest.mock import patch
 from models.base import Base
