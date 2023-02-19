@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """Rectangle Unit test"""
 import unittest
+import os
+from io import StringIO
+from unittest.mock import patch
 from models.rectangle import Rectangle
 from models.square import Square
 from models.base import Base
@@ -32,7 +35,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(o1.height, 3)
         self.assertEqual(o1.x, 0)
         self.assertEqual(o1.y, 0)
-        self.assertEqual(o1.id, 8)
+        self.assertEqual(o1.id, 9)
         self.assertEqual(o2.width, 3)
         self.assertEqual(o2.height, 4)
         self.assertEqual(o2.x, 1)
@@ -60,5 +63,18 @@ class TestRectangle(unittest.TestCase):
         assert str(r3) == "[Rectangle] (3) 0/0 - 7/8"
         assert str(r4) == "[Rectangle] (eps) 2/2 - 2/6"
 
+    def test_display(self):
+        """Testing display()"""
+
+        o1 = Rectangle(3, 2)
+        with patch('sys.stdout', new=StringIO()) as fakeOutput:
+            o1.display()
+            self.assertEqual(fakeOutput.getvalue(), '###\n###\n')
+
+        o2 = Rectangle(4, 5, 0, 1, 12)
+        with patch('sys.stdout', new=StringIO()) as fakeOutput:
+            o2.display()
+            self.assertEqual(fakeOutput.getvalue(),
+                             '\n####\n####\n####\n####\n####\n')
 if __name__ == "__main__":
     unittest.main()
