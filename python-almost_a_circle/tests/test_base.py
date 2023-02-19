@@ -1,17 +1,12 @@
 #!/usr/bin/python3
-"""Base Class"""
+"""Unit test for base class"""
+import unittest
+from models.base import Base
 
+class TestBase(unittest.TestCase):
+    """Base class unit test"""
 
-class Base:
-    """Base class init"""
-
-    __nb_objects = 0
-
-    def __init__(self, id=None):
-        """Define init"""
-        if id is not None:
-            self.id = id
-
-        else:
-            Base.__nb_objects += 1
-            self.id = Base.__nb_objects
+    def test_id(self):
+        """Test base id if it exist"""
+        self.b1 = Base()
+        self.asserEqual(self.b1.id, 1)
