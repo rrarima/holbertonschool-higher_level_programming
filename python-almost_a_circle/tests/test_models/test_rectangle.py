@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 """Rectangle Unit test"""
-import unittest
+from unittest import TestCase
 from models.rectangle import Rectangle
 from models.base import Base
 
 
-class TestRectangle(unittest.TestCase):
+class TestRectangle(TestCase):
     """Rectangle unit test"""
 
-    def objCount(self):
+    def setup(self):
         """Grabs obj count"""
         Base._Base__nb_objects = 0
         self.assertEqual(Base._Base__nb_objects, 0)
@@ -20,5 +20,5 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(t1.area(), 2)
         self.assertEqual(t1.area(), 2)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
