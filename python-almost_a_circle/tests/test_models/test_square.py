@@ -15,6 +15,7 @@ class TestSquare(unittest.TestCase):
     def setUp(self):
         """Resets the number of objects"""
         Base._Base__nb_objects = 0
+        self.assertEqual(Base._Base__nb_objects, 0)
 
     def test_size_value(self):
         """Test that the size value is set correctly"""
