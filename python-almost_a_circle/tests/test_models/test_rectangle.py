@@ -76,5 +76,22 @@ class TestRectangle(unittest.TestCase):
             o2.display()
             self.assertEqual(fakeOutput.getvalue(),
                              '\n####\n####\n####\n####\n####\n')
+    def test_rectangle_update(self):
+        r1 = Rectangle(4, 3, 1, 2, 5)
+        r2 = Rectangle(2, 4)
+        r3 = Rectangle(1, 1, 1, 1, 10)
+        r4 = Rectangle(1, 1, 1)
+        r5 = Rectangle(2, 2, id="hello")
+
+        r1.update(3, 5, 1, 1, 7)
+        self.assertEqual(r1.__str__(), '[Rectangle] (3) 1/7 - 5/1')
+        with self.assertRaises(ValueError):
+            r2.update(x=2, y=-1, width=-2)
+            r3.update(3, "string", 1)
+        r4.update(5)
+        self.assertEqual(r4.__str__(), '[Rectangle] (5) 1/0 - 1/1')
+        r5.update(id=8, x=1, width=3)
+        self.assertEqual(r5.__str__(), '[Rectangle] (8) 1/0 - 3/2')
+
 if __name__ == "__main__":
     unittest.main()
