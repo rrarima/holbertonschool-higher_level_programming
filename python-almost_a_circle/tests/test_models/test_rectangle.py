@@ -13,7 +13,7 @@ class TestRectangle(unittest.TestCase):
         """Tears down obj count"""
         Base._Base__nb_objects = 0
         self.assertEqual(Base._Base__nb_objects, 0)
-    
+
     def test_area(self):
         """Testing area()"""
         o1 = Rectangle(1, 2)
