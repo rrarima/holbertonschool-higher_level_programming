@@ -21,7 +21,7 @@ if __name__ == "__main__":
 
     # Execute SQL query to fetch all the states in the database
     cursor.execute("SELECT * FROM states\
-                    WHERE name LIKE 'N%' ORDER BY id ASC")
+                    WHERE BINARY name LIKE 'N%' ORDER BY id ASC")
 
     # Fetch all the rows and display them
     rows = cursor.fetchall()
