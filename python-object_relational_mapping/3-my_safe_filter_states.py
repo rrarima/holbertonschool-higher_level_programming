@@ -21,7 +21,7 @@ if __name__ == "__main__":
 
     query = "SELECT * FROM states WHERE BINARY name LIKE %s ORDER BY id ASC"
     name = (sys.argv[4],)
-    
+
     # Execute SQL query to fetch all the states in the database
     cursor.execute(query, name)
 
