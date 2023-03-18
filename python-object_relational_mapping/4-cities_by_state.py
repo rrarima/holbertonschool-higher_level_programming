@@ -19,15 +19,18 @@ if __name__ == "__main__":
     # Create a cursor object to execute queries
     cursor = db.cursor()
 
-    query = "SELECT cities.id, cities.name, states.name\
-             FROM cities\
-             WHERE cities.state_id = states.id\
-             ORDER BY cities.id"
-             
-    name = (sys.argv[4],)
-    
+    # query = "SELECT cities.id, cities.name, states.name\
+    #          FROM cities\
+    #          WHERE cities.state_id = states.id\
+    #          ORDER BY cities.id"
+
+    #name = (sys.argv[4],)
+
     # Execute SQL query to fetch all the states in the database
-    cursor.execute(query, name)
+    cursor.execute("""SELECT cities.id, cities.name, states.name
+                      FROM cities
+                      WHERE cities.state_id = states.id
+                      ORDER BY cities.id""")
 
     # Fetch all the rows and display them
     rows = cursor.fetchall()
