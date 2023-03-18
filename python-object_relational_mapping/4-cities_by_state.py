@@ -24,7 +24,7 @@ if __name__ == "__main__":
              JOIN states ON cities.state_id = states.id\
              ORDER BY cities.id"\
 
-    #name = (sys.argv[4],)
+    # name = (sys.argv[4],)
 
     # Execute SQL query to fetch all the states in the database
     cursor.execute(query)
