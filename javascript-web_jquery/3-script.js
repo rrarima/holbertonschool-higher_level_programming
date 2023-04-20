@@ -1,5 +1,7 @@
-const divHeader = $('#red_header');
+$(document).ready(function () {
+  const divHeader = $("#red_header");
 
-divHeader.click(function () {
-  $('header').addClass('red');
+  divHeader.click(function () {
+    $("header").addClass("red");
+  });
 });
